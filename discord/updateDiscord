@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cd /tmp && /usr/bin/wget -O ./discord.tar.gz "https://discord.com/api/download?platform=linux&format=tar.gz" && tar xvf discord.tar.gz
+
+
+sudo /usr/bin/rm -rf /usr/share/discord
+sudo /usr/bin/mv /tmp/Discord/ /usr/share/discord
+sudo /usr/bin/mv /usr/share/discord/discord.desktop /home/$USER/.local/share/applications
+sudo /usr/bin/rm /bin/discord
+sudo /usr/bin/ln -s /usr/share/discord/discord /bin
