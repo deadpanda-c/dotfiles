@@ -64,10 +64,8 @@ sudo pacman -S curl jq
 
 ## 🎯 Example Output
 
-```
-The only way to do great work is to love what you do.
-Steve Jobs
-```
+<img width="1314" height="56" alt="image" src="https://github.com/user-attachments/assets/9b2857e8-779c-4ed0-86f2-2ebd403505e7" />
+
 
 ## 🔧 Customization
 
