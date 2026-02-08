@@ -1,8 +1,10 @@
 #!/bin/bash
 
-# get .env var file
-if [ -f .env ]; then
-    source .env
+INTERVAL=86400
+
+# check for env file loaded as parameter
+if [[ -f $1 ]]; then
+  source $1
 fi
 
 get_quote() {
@@ -14,9 +16,14 @@ get_quote() {
 
 check_connection() {
   if ! ping -c 1 -q -W 1 google.com &> /dev/null; then
-    exit 1
+    return 1
   fi
+  return 0
 }
 
-check_connection
-get_quote
+while true; do
+  if [[ $(check_connection) -eq 0 ]]; then
+    get_quote
+  fi
+  sleep $INTERVAL
+done
